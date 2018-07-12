@@ -6,6 +6,8 @@ class Matched extends Component {
 	}
 
 	render () {
-		
+		return(<div></div>)
 	}
 }
+
+export default Matched

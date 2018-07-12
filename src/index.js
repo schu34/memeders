@@ -1,8 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React                                     from 'react';
+import ReactDOM                                  from 'react-dom';
+import { BrowserRouter as Router, Switch, Route }from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App                                       from './App';
+import Chat                                      from './components/chat';
+import Home                                      from './components/home';
+import Matched                                   from './components/matches';
+import './index.css';
+
+import registerServiceWorker                     from './registerServiceWorker';
+
+ReactDOM.render(
+    <Router basename="/">
+        <Switch>
+            <App>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/chat" component={Chat} />
+                <Route exact path="/matches" component={Matched} />
+            </App>
+        </Switch>
+    </Router>
+    , document.getElementById('root'));
 registerServiceWorker();

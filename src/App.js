@@ -5,9 +5,9 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-     <div>hello</div> 
-    );
+     <div>hello</div>
+    )
   }
 }
 
-export default App;
+export default App
