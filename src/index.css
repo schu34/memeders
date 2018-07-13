@@ -10,3 +10,8 @@ body {
     margin-right: auto;
     width: 50%;
 }
+
+.navbar img {
+	height: 25px;
+	width: 25px;
+}

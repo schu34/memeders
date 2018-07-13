@@ -1,4 +1,5 @@
 import React, { Component } 				from 'react';
+import { Col, Row, Grid }           		from 'react-bootstrap';
 
 class Navbar extends Component {
 	constructor(props) {
@@ -8,11 +9,25 @@ class Navbar extends Component {
 	render () {
 		return(
 			<div>
-				<a href="/home" className="navbar">home</a>
-				<a href="/matches" className="navbar">matches</a>
-				<a href="/chat" >
-					<img src="img/Logo.png" className="logo"/>
-				</a>
+				<Grid>
+					<Row>
+						<Col xs={2}>
+							<a href="/home" className="navbar">
+								<img src="img/Profile.png" />
+							</a>
+						</Col>
+						<Col xs={2}>
+							<a href="/matches" className="navbar">
+								<img src="img/Match.png" />
+							</a>
+						</Col>
+						<Col xs={2}>
+							<a href="/chat" className="navbar">
+								<img src="img/chat.png" />
+							</a>
+						</Col>
+					</Row>
+				</Grid>
 			</div>
 		)
 	}
