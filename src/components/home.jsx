@@ -29,13 +29,14 @@ class Home extends Component {
     onSwipedLeft(){
         console.log("swipred left");
         const left = -1;
-        this.saveSwipe(left);
+        this.saveSwipe(left)
     }
 
     saveSwipe(swipeValue){
         let user_id = localStorage.getItem('user_id');
         let image_id = this.state.meme.id;
 
+            this.getMeme();
         axios.get(`${url}/swipe/${user_id}/${image_id}/${swipeValue}`)
         .then((response) => {
             console.log("swipe was saved");
@@ -45,8 +46,8 @@ class Home extends Component {
     }
 
     getMeme(){
-        // axios.get(`${url}/randomImage`)
-        axios.get(`${url}/images/people/0fafdc033aaa708cdb509ea5df56ab38.jpg`)
+        axios.get(`${url}/meme`)
+        // axios.get(`${url}/images/people/0fafdc033aaa708cdb509ea5df56ab38.jpg`)
         .then((meme) => {
             console.log("MEME: ", meme);
             this.setState({meme:meme.data});
@@ -57,9 +58,10 @@ class Home extends Component {
     render () {
 
         const imageStyles = {
-          width: '414px',
+          width: '350px',
           height: '580px',
-          backgroundImage: `url(${this.state.meme.path})`,
+          margin: "auto",
+          backgroundImage: `url(${url}${this.state.meme.url})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           backgroundPosition: 'center',
@@ -70,7 +72,8 @@ class Home extends Component {
                 preventDefaultTouchmoveEvent
                 onSwipedRight={this.onSwipedRight}
                 onSwipedLeft={this.onSwipedLeft} >
-                    <div style={imageStyles}></div>
+                    <div style={imageStyles}>
+                    </div>
             </Swipeable>
         )
     }
