@@ -15,6 +15,8 @@ class Matches extends Component {
 					<div className="matches-div"></div>
 					<div className="matches-div"></div>
 					<div className="matches-div"></div>
+					<div className="matches-div"></div>
+					<div className="matches-div"></div>
 				</div>
 			</div>
 		)

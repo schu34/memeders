@@ -23,6 +23,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	height: 400px;
+	overflow: scroll;
 }
 
 .matches-div {
@@ -45,6 +46,6 @@ body {
     padding-top:  20px;
 }
 
-.navbar a {
+.navbar {
     padding: 20px 30px 20px 30px;
 }
