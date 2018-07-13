@@ -85,7 +85,7 @@ class Home extends Component {
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           backgroundPosition: 'center',
-          'box-shadow': '0px 1px 1px 0px rgba(0,0,0,0.5)',
+          'boxShadow': '0px 1px 1px 0px rgba(0,0,0,0.5)',
         };
 
         if(this.state.loading)return <div>loading...</div>
@@ -96,7 +96,7 @@ class Home extends Component {
                 onSwipedLeft={this.onSwipedLeft} >
                     <div style={imageStyles}>
                     </div>
-                    <p>{this.state.tag}</p>
+                    <div className="tag-text">{this.state.tag}</div>
             </Swipeable>
         )
     }
