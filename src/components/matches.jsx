@@ -1,7 +1,6 @@
 import React, { Component } 				from 'react';
-import Moment 								from 'moment';
-import axios 								from 'axios';
-import { client, url }        					from '../utils/axiosconfig.js';
+import { client, 
+		 url }        						from '../utils/axiosconfig.js';
 
 class Matches extends Component {
 	constructor(props) {
@@ -14,24 +13,30 @@ class Matches extends Component {
 	componentDidMount(){
 		return client.get(`${url}/matches/generateduserid1/`)
 			.then(res => {
-				this.setState = {
-					loading:   false
-				}
+				this.setState ({
+					loading:   false,
+					users: 	   res.data
+				})
 				console.log("RES", res)
 			})
 	}
 
 
 	render () {
+
+	const {
+		users 
+	} = this.state;
+	console.log("USERS", users)
 		return(
 			this.state.loading ? "loading" :
 			<div>
 				<div className="matches-container">
-					<div className="matches-div"></div>
-					<div className="matches-div"></div>
-					<div className="matches-div"></div>
-					<div className="matches-div"></div>
-					<div className="matches-div"></div>
+					{users.map((user, index) => {
+					return(
+						<div className="matches-div" key={index}>
+						<p className="match-names"></p>{user.user_name}</div>
+					)})}
 				</div>
 			</div>
 		)
