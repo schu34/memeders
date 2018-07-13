@@ -79,12 +79,13 @@ class Home extends Component {
 
         const imageStyles = {
           width: '350px',
-          height: '580px',
+          height: '550px',
           margin: "auto",
           backgroundImage: `url(${url}${this.state.meme.url})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
           backgroundPosition: 'center',
+          'box-shadow': '0px 1px 1px 0px rgba(0,0,0,0.5)',
         };
 
         if(this.state.loading)return <div>loading...</div>
