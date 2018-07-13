@@ -86,3 +86,8 @@ body {
 table {
     border-spacing: 0px;
 }
+
+.match-names {
+    display: inline-block;
+    padding-right:  20px;
+}
