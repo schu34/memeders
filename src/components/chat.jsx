@@ -18,10 +18,12 @@ class Chat extends Component {
   componentDidMount() {
     const userid = localStorage.getItem("user_id");
     const otherId = localStorage.getItem("other_id");
+    const userName = localStorage.getItem("other_name");
 
     this.setState({
       userid,
-      otherId
+      otherId,
+      userName
     })
     
     this.updateChat();
@@ -68,15 +70,17 @@ class Chat extends Component {
   }
 
   render() {
-    console.log(this.state.messages);
+    console.log("MESSAGES", this.state.messages);
+    console.log("USERNAMES", this.state.userName);
     return this.state.loading ? (
       "loading"
     ) : (
       <div className ='chat-container'>
+        <p className="username">{this.state.userName}</p>
         <ChatFeed messages={this.state.messages} />
         <div className="chat-input-container">
-          <input onChange={this.onChange} value={this.state.message} type="text"/>
-          <button onClick={this.onSend}>send</button>
+          <input className="fs16 text-input" onChange={this.onChange} value={this.state.message} type="text"/>
+          <button className="send fs16" onClick={this.onSend}>send</button>
         </div>
       </div>
     );

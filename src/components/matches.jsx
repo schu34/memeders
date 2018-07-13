@@ -12,10 +12,10 @@ class Matches extends Component {
 		}
 	} 
 
-	MatchtoChat(user_id) {
+	MatchtoChat(user_id, user_name) {
 		localStorage.setItem('other_id', user_id)
+		localStorage.setItem('other_name', user_name)
 		this.setState({
-			value: 			user_id,
 			redirect: 	    true
 		})
 	}
@@ -30,8 +30,6 @@ class Matches extends Component {
 				console.log("RES", res)
 			})
 	}
-
-
 
 	render () {
 
@@ -50,7 +48,7 @@ class Matches extends Component {
 				<div className="matches-container">
 					{users.map((user, index) => {
 					return(
-						<div onClick={() => this.MatchtoChat(user.user)} className="matches-div" key={index}>
+						<div onClick={() => this.MatchtoChat(user.user_id, user.user_name)} className="matches-div" key={index}>
 						<p className="match-names"></p>{user.user_name}</div>
 					)})}
 				</div>
