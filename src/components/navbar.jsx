@@ -9,7 +9,7 @@ class Navbar extends Component {
 		return(
 			<div>
 				<div className="navbar-container">
-					<a href="/home" className="navbar" alt="profile">
+					<a href="/swipe" className="navbar" alt="profile">
 						<img src="img/Profile.png" />
 					</a>
 					<a href="/matches" className="navbar" alt="match">
