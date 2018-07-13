@@ -49,3 +49,9 @@ body {
 .navbar {
     padding: 20px 30px 20px 30px;
 }
+
+.login-container{
+    margin: auto;
+    width: 50%;
+    
+}
