@@ -10,7 +10,7 @@ class Navbar extends Component {
 		return(
 			<div>
 				<div className="navbar-container">
-					<a href="/home" className="navbar" alt="profile">
+					<a href="/swipe" className="navbar" alt="profile">
 						<img src="img/Profile.png" />
 						{window.location==="/home" ? <img src="img/Reactangle.png" /> : null}
 					</a>
