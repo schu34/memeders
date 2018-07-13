@@ -1,17 +1,13 @@
-import React, { Component } 				from 'react';
+import React, { Component } from "react";
 
 class Matches extends Component {
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render () {
-		return(
-			<div>
-			
-			</div>
-		)
-	}
+  render() {
+    return <div />;
+  }
 }
 
-export default Matches
+export default Matches;
