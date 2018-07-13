@@ -1,4 +1,5 @@
 import React, { Component } 				from 'react';
+import { Link } 							from 'react-router-dom';
 
 class Navbar extends Component {
 	constructor(props) {
@@ -14,21 +15,31 @@ class Navbar extends Component {
 	render () {
 		console.log("HERE", window.location.pathname)
 		return(
-			<div>
-				<div className="navbar-container">
-					<a href="/swipe" className="navbar" alt="profile">
-						<img src="img/Profile.png" />
-						{window.location.pathname ==="/swipe" ? <img src="img/Rectangle.png" className="rectangle" /> : null}
-					</a>
-					<a href="/matches" className="navbar" alt="match">
-						<img src="img/Match.png" />
-						{window.location.pathname ==="/match" ? <img src="img/Rectangle.png" className="rectangle" /> : null}
-					</a>
-					<a href="/chat" className="navbar" alt="chat">
-						<img src="img/chat.png" />
-						{window.location.pathname ==="/chat" ? <img src="img/Rectangle.png" className="rectangle" /> : null}
-					</a>
-				</div>
+			<div className="navbar-container">
+				<table className="navbar-table">
+				  <tr>
+				    <th className="left">
+				    	<Link to="/swipe" >
+							<img src="img/Profile.png" className="navbar-pics" />
+						</Link>
+					</th>
+				    <th className="mid">
+				    	<Link to="/matches">
+							<img src="img/Match.png" className="navbar-pics" />
+						</Link>
+					</th>
+				    <th className="right">
+				    	<Link to="/chat">
+							<img src="img/chat.png" className="navbar-pics"/>
+						</Link>
+					</th>
+				  </tr>
+				  <tr>
+				    <td>{window.location.pathname ==="/swipe" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
+				    <td>{window.location.pathname ==="/matches" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
+				    <td>{window.location.pathname ==="/chat" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
+				  </tr>
+				</table>	
 			</div>
 		)
 	}
