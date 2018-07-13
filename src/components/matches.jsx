@@ -1,4 +1,5 @@
 import React, { Component } 				from 'react';
+import Moment 								from 'moment';
 
 class Matches extends Component {
 	constructor(props) {
@@ -8,7 +9,7 @@ class Matches extends Component {
 	render () {
 		return(
 			<div>
-			
+				<p>Today</p>
 			</div>
 		)
 	}
