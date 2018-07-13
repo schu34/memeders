@@ -46,9 +46,11 @@ class Matches extends Component {
 			this.state.loading ? "loading" :
 			<div>
 				<div className="matches-container">
+					<h1>Your Matches</h1>
 					{users.map((user, index) => {
 					return(
 						<div onClick={() => this.MatchtoChat(user.user_id, user.user_name)} className="matches-div" key={index}>
+						<img className="profpics" src={"img/"+user.profile_image}/>
 						<p className="match-names"></p>{user.user_name}</div>
 					)})}
 				</div>

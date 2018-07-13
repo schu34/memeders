@@ -28,7 +28,7 @@ body {
 
 .matches-div {
 	width: 85%;
-	height: 60px;
+	height: 75px;
 	border-radius: 25px;
     border: 2px solid #73AD21;
     margin-left: auto;
@@ -91,10 +91,12 @@ table {
 .match-names {
     display: inline-block;
     padding-right:  20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .username {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .send {
@@ -102,11 +104,13 @@ table {
     color: #FAFAFA;
     margin-right: 60px;
     float: right;
+    font-family: 'Roboto', sans-serif;
 }
 
 .text-input {
     width: 70%;
     border: 2px solid lightgray;
+    font-family: 'Roboto', sans-serif;
 }
 
 .fs16 {
@@ -140,8 +144,20 @@ table {
 
 .tag-text{
     text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
 
-    font-size: 20px 
+.profpics {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
 
-
+h1 {
+    text-align: center;
+    color: rgb(76, 90, 116);
+    font-family: 'Roboto', sans-serif;
 }
