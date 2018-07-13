@@ -9,13 +9,13 @@ class Navbar extends Component {
 		return(
 			<div>
 				<div className="navbar-container">
-					<a href="/home" className="navbar">
+					<a href="/home" className="navbar" alt="profile">
 						<img src="img/Profile.png" />
 					</a>
-					<a href="/matches" className="navbar">
+					<a href="/matches" className="navbar" alt="match">
 						<img src="img/Match.png" />
 					</a>
-					<a href="/chat" className="navbar">
+					<a href="/chat" className="navbar" alt="chat">
 						<img src="img/chat.png" />
 					</a>
 				</div>

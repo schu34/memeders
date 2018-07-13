@@ -3,12 +3,12 @@ axios.defaults.headers.common['Authorization'] 	= `Bearer ${localStorage.getItem
 
 module.exports = {
   	client: axios.create({
-		baseURL: 'http://memderz.cloud.apollocommand.io/',
+		baseURL: '',
 		responseType: 'json',
 		timeout: 5000,
   	}),
   	cdnUrl: '',
-  	url: 'http://memderz.cloud.apollocommand.io/',
+  	url: 'http://memderz.cloud.apollocommand.io',
   	setToken: () => {
 		  axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token') || null}`;
   	},

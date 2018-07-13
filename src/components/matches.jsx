@@ -13,12 +13,14 @@ class Matches extends Component {
 
 	componentDidMount(){
 		return client.get(`${url}/matches/generateduserid1/`)
-		.then(res => {
-			return {
-
-			}
-		})
+			.then(res => {
+				this.setState = {
+					loading:   false
+				}
+				console.log("RES", res)
+			})
 	}
+
 
 	render () {
 		return(
