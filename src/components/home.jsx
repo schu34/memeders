@@ -8,6 +8,7 @@ class Home extends Component {
         super(props);
         this.state = {
             meme: {},
+            loading: true
         }
 
         this.onSwipedRight = this.onSwipedRight.bind(this);
@@ -36,6 +37,7 @@ class Home extends Component {
         let user_id = localStorage.getItem('user_id');
         let image_id = this.state.meme.id;
 
+        this.setState({loading: true});
             this.getMeme();
         axios.get(`${url}/swipe/${user_id}/${image_id}/${swipeValue}`)
         .then((response) => {
@@ -50,7 +52,25 @@ class Home extends Component {
         // axios.get(`${url}/images/people/0fafdc033aaa708cdb509ea5df56ab38.jpg`)
         .then((meme) => {
             console.log("MEME: ", meme);
-            this.setState({meme:meme.data});
+            axios.post("http://e8c69e01.ngrok.io/summary",{
+                url: `${url}${meme.data.url}`
+            }).then(summary=>{
+                const {data} = summary
+
+                let max = 0;
+                let maxKey = "";
+                Object.keys(data).forEach(key=>{
+                    if(parseFloat(data[key]) > max){
+                        max = parseFloat(data[key])
+                        maxKey = key;
+                    }
+                })
+                console.log(maxKey)
+                this.setState({meme:meme.data, loading: false, tag: maxKey.split(" ")[0]});
+            })
+
+
+
         })
         .catch((err) => {console.log("getMeme error: ", err)});
     }
@@ -67,6 +87,7 @@ class Home extends Component {
           backgroundPosition: 'center',
         };
 
+        if(this.state.loading)return <div>loading...</div>
         return (
             <Swipeable
                 preventDefaultTouchmoveEvent
@@ -74,6 +95,7 @@ class Home extends Component {
                 onSwipedLeft={this.onSwipedLeft} >
                     <div style={imageStyles}>
                     </div>
+                    <p>{this.state.tag}</p>
             </Swipeable>
         )
     }
