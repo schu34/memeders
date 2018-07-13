@@ -58,3 +58,12 @@ body {
     margin: auto;
     width: 50%;
 }
+
+.chat-input-container{
+    position: absolute;
+    bottom: 0;
+}
+.chat-container{
+    position: relative;
+    height: 80vh
+}
