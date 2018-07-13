@@ -8,7 +8,11 @@ class Chat extends Component {
     this.state = {
       loading: true,
       message: ""
+
     };
+    this.onChange = this.onChange.bind(this);
+    this.updateChat = this.updateChat.bind(this);
+    this.onSend = this.onSend.bind(this);
   }
 
   componentDidMount() {
@@ -18,8 +22,12 @@ class Chat extends Component {
     this.setState({
       userid,
       otherId
-    });
-    client.get(`${url}/chat/${userid}/${otherId}`).then(res => {
+    })
+    
+    this.updateChat();
+  }
+  updateChat(){
+    return client.get(`${url}/chat/${this.state.userid}/${this.state.otherId}`).then(res => {
 
       console.log(res.data);
       this.setState({
@@ -31,6 +39,7 @@ class Chat extends Component {
         }),
         loading: false
       });
+      setTimeout(this.updateChat, 500);
     });
   }
 
@@ -40,6 +49,14 @@ class Chat extends Component {
       sender: this.state.userid,
       reciever: this.state.otherId,
     });
+    // this.setState(oldState=>{
+    //   const ret = Object.assign({}, oldState);
+    //   ret.messages.push(new Message({
+    //     id: 0,
+    //     message: oldState.messages
+    //   }))
+    //   return ret;
+    // })
     this.setState({
       sending: true,
       message: "",
@@ -47,7 +64,7 @@ class Chat extends Component {
   }
 
   onChange(e){
-    this.setState({message: e.targe.value})
+    this.setState({message: e.target.value})
   }
 
   render() {
@@ -59,7 +76,7 @@ class Chat extends Component {
         <ChatFeed messages={this.state.messages} />
         <div className="chat-input-container">
           <input onChange={this.onChange} value={this.state.message} type="text"/>
-          <button onClick={this.onClick}>send</button>
+          <button onClick={this.onSend}>send</button>
         </div>
       </div>
     );
