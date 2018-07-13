@@ -6,6 +6,7 @@ import App from "./App";
 import Chat from "./components/chat";
 import Home from "./components/home";
 import Matches from "./components/matches";
+import Login from "./components/login";
 import "./index.css";
 
 import registerServiceWorker from "./registerServiceWorker";
@@ -14,8 +15,8 @@ ReactDOM.render(
   <Router basename="/">
     <Switch>
       <App>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/swipe" />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/swipe" component={Home} />
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/matches" component={Matches} />
       </App>
