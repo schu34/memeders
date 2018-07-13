@@ -6,10 +6,16 @@ class Matches extends Component {
 		super(props);
 	}
 
+
+
 	render () {
 		return(
 			<div>
-				<p>Today</p>
+				<div className="matches-container">
+					<div className="matches-div"></div>
+					<div className="matches-div"></div>
+					<div className="matches-div"></div>
+				</div>
 			</div>
 		)
 	}
