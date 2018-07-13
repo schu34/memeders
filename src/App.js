@@ -11,7 +11,7 @@ class App extends Component {
 
         return (
         	<div>
-        		<img src="img/memederz.png"/>
+        		<img src="img/memederz.png" className="memederz"/>
         		{this.props.children}
         		<Navbar  />
         	</div>
