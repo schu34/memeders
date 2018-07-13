@@ -1,13 +1,17 @@
 import React, { Component } 				from 'react';
 
-class Matched extends Component {
+class Matches extends Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render () {
-		return(<div></div>)
+		return(
+			<div>
+			
+			</div>
+		)
 	}
 }
 
-export default Matched
+export default Matches
