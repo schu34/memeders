@@ -27,12 +27,12 @@ class Home extends Component {
 
         const { imageIdx = 0 } = this.state;
         const imageStyles = {
-          width: '400px',
+          width: '414px',
           height: '580px',
           backgroundImage: `url(${this.state.memes[imageIdx]})`,
           backgroundRepeat: 'no-repeat',
-          paddingTop: 'auto',
-          paddingBottom: 'auto',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
         };
 
         return (
