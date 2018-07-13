@@ -8,7 +8,7 @@ module.exports = {
 		timeout: 5000,
   	}),
   	cdnUrl: '',
-  	url: 'memderz.cloud.apollocommand.io/',
+  	url: 'http://memderz.cloud.apollocommand.io/',
   	setToken: () => {
 		  axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token') || null}`;
   	},
