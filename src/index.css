@@ -50,8 +50,11 @@ body {
     padding: 20px 30px 20px 30px;
 }
 
+.rectangle {
+    height: 5px !important;
+} 
+
 .login-container{
     margin: auto;
     width: 50%;
-    
 }
