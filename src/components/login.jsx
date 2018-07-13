@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {client} from "../utils/axiosconfig";
+import {url, client} from "../utils/axiosconfig";
 
 class Login extends Component {
   constructor(props) {
@@ -7,19 +7,21 @@ class Login extends Component {
     this.state = {loading: false, username:""};
     this.onChange = this.onChange.bind(this);
     this.login= this.login.bind(this);
+    this.signup = this.signup.bind(this);
   }
+
 
   onChange(e){
     this.setState({username: e.target.value})
   }
 
   login(e){
-    client.get("/login/" + this.state.username)
+    client.get(url + "login/" + this.state.username)
       .then(console.log);
   }
 
   signup(e){
-    client.get("/signup/" + this.state.username)
+    client.get(url +"signup/" + this.state.username)
       .then(console.log);
   }
 
