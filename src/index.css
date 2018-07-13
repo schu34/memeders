@@ -51,6 +51,7 @@ body {
 
 .rectangle {
     height: 5px !important;
+    width: 40px;
 } 
 
 .login-container{
@@ -81,4 +82,8 @@ body {
 
 .right {
     padding-left: 50px;
+}
+
+table {
+    border-spacing: 0px;
 }

@@ -35,9 +35,9 @@ class Navbar extends Component {
 					</th>
 				  </tr>
 				  <tr>
-				    <td>{window.location.pathname ==="/swipe" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
-				    <td>{window.location.pathname ==="/matches" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
-				    <td>{window.location.pathname ==="/chat" ? <img src="img/Rectangle.png" className="rectangle" /> : null}</td>
+				    <td>{window.location.pathname ==="/swipe" ? <img src="img/Rectangle.png" className="rectangle left" /> : null}</td>
+				    <td>{window.location.pathname ==="/matches" ? <img src="img/Rectangle.png" className="rectangle mid" /> : null}</td>
+				    <td>{window.location.pathname ==="/chat" ? <img src="img/Rectangle.png" className="rectangle right" /> : null}</td>
 				  </tr>
 				</table>	
 			</div>
