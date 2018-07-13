@@ -1,5 +1,5 @@
-import React, { Component }                         from 'react';
-import Swipeable from 'react-swipeable'
+import React, { Component } from 'react';
+import Swipeable            from 'react-swipeable';
 
 class Home extends Component {
     constructor(props) {
@@ -27,9 +27,12 @@ class Home extends Component {
 
         const { imageIdx = 0 } = this.state;
         const imageStyles = {
-          width: '200px',
-          height: '200px',
-          backgroundImage: `url(${this.state.memes[imageIdx]})`
+          width: '400px',
+          height: '580px',
+          backgroundImage: `url(${this.state.memes[imageIdx]})`,
+          backgroundRepeat: 'no-repeat',
+          paddingTop: 'auto',
+          paddingBottom: 'auto',
         };
 
         return (
@@ -37,7 +40,7 @@ class Home extends Component {
                 preventDefaultTouchmoveEvent
                 onSwipedRight={this.onSwipedRight}
                 onSwipedLeft={this.onSwipedLeft} >
-                    <div styles={imageStyles}></div>
+                    <div style={imageStyles}></div>
             </Swipeable>
         )
     }
