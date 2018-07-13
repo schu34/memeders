@@ -79,7 +79,7 @@ class Chat extends Component {
         <p className="username">{this.state.userName}</p>
         <ChatFeed messages={this.state.messages} />
         <div className="chat-input-container">
-          <input className="fs16 text-input" onChange={this.onChange} value={this.state.message} type="text"/>
+          <input className="fs19 text-input" onChange={this.onChange} value={this.state.message} type="text"/>
           <button className="send fs16" onClick={this.onSend}>send</button>
         </div>
       </div>

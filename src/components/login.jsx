@@ -37,19 +37,18 @@ class Login extends Component {
     if (this.state.redirect) return <Redirect to="/swipe" push/>;
     return (
       <div className="login-container">
-        enter your username:
-
-        <br/>
+      <img src="img/Logo.png" className="login-logo"/>
+        <p>Enter your username:</p>
 
         {this.state.message || null}
         <input
           type="text"
           value={this.state.username}
           onChange={this.onChange}
-          className="login-input"
+          className="login text-input fs19 wd100"
         />
-        <button className="login-button" onClick={this.login}>login</button>
-        <button className="login-button" onClick={this.signup}>signup</button>
+        <button className="login-button fs19" onClick={this.signup}>signup</button>
+        <button className="login-button fs19" onClick={this.login}>login</button>
       </div>
     );
   }
