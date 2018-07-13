@@ -52,4 +52,9 @@ body {
 
 .rectangle {
     height: 5px !important;
+} 
+
+.login-container{
+    margin: auto;
+    width: 50%;
 }
