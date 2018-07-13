@@ -8,10 +8,10 @@ class Navbar extends Component {
 	render () {
 		return(
 			<div>
-				<a href="/home" />
-				<a href="/matches" />
+				<a href="/home" className="navbar">home</a>
+				<a href="/matches" className="navbar">matches</a>
 				<a href="/chat" >
-					<img src="img/Logo.png" />
+					<img src="img/Logo.png" className="logo"/>
 				</a>
 			</div>
 		)
