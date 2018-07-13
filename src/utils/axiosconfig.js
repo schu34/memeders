@@ -3,7 +3,7 @@ axios.defaults.headers.common['Authorization'] 	= `Bearer ${localStorage.getItem
 
 module.exports = {
   	client: axios.create({
-		baseURL: '',
+		baseURL: 'http://memderz.cloud.apollocommand.io/',
 		responseType: 'json',
 		timeout: 5000,
   	}),
